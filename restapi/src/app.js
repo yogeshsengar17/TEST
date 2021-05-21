@@ -37,8 +37,11 @@ app.get('/highestmarks',async(req,res)=>{
             if(total_marks_array[i]> highestMarks){
                 highestMarks=total_marks_array[i];
                 highestMarksIndex=i
+                
             }
+            
         }
+       
         var flag=0;
         for(i=0;i<=total_marks_array.length-1;i++){
             if(highestMarks==total_marks_array[i]){
@@ -107,7 +110,7 @@ app.get('/averagemarks',async(req,res)=>{
             }
         }
         if(flag=0){
-            res.status(201).send([getStudent[highestMarksIndex]])
+            res.status(201).send([getStudent[highestMarksIndex]]);
         }
         else{
             response=[]
